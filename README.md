@@ -38,7 +38,6 @@ Restaurant Finder is a simple web application built with Flask and Python. It al
    python app.py
    ```
 
-4. Open your web browser and visit `http://127.0.0.1:5000/`.
 
 ## Usage
 
