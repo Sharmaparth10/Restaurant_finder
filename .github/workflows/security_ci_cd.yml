@@ -27,10 +27,12 @@ jobs:
         source venv/bin/activate
         export FLASK_APP=app.py
         nohup flask run --host=0.0.0.0 --port=8000 &
+        sleep 15
 
     - name: DAST with OWASP ZAP
       run: |
         docker pull zaproxy/zap-stable
+        sudo chmod 777 $(pwd)
         docker run -v $(pwd):/zap/wrk:rw -t zaproxy/zap-stable zap-baseline.py -t http://127.0.0.1:8000 -r zap_report.html || true
 
     - name: Stop Flask app
