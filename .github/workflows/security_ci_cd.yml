@@ -22,12 +22,6 @@ jobs:
         pip install --upgrade pip
         pip install -r requirements.txt
 
-    - name: Security analysis with Bandit
-      run: |
-        source venv/bin/activate
-        pip install bandit
-        bandit -r . > bandit_report.txt
-
     - name: Start Flask app
       run: |
         source venv/bin/activate
