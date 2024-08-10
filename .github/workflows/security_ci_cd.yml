@@ -40,6 +40,7 @@ jobs:
 
     - name: DAST with OWASP ZAP
       run: |
+        sudo chmod 777 $(pwd)
         docker run -v $(pwd):/zap/wrk:rw -t zaproxy/zap-stable zap-baseline.py -t http://${{ steps.ip.outputs.ip }}:8000 -r zap_report.html || true
         
     - name: Stop Flask app
