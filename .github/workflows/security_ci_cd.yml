@@ -30,6 +30,7 @@ jobs:
 
     - name: DAST with OWASP ZAP
       run: |
+        docker pull zaproxy/zap-stable
         docker run -t owasp/zap2docker-stable zap-baseline.py -t http://127.0.0.1:8000 -r zap_report.html || true
 
     - name: Stop Flask app
