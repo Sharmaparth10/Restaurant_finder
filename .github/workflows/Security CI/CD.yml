@@ -1,4 +1,4 @@
-name: Security CI/CD
+name: Security CICD
 
 on: [push]
 
